@@ -5,7 +5,7 @@ import { Button, Grid, TextField } from '@material-ui/core';
 import FileUpload from '../../components/FileUpload';
 import { useInput } from '../../hooks/useInput';
 import { useRouter } from 'next/router';
-import axios from 'axios';
+import api from '../../utils/api';
 
 const Create = props => {
   const [activeStep, setActiveStep] = useState(0);
