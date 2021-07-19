@@ -42,7 +42,11 @@ export const AuthProvider = ({ children }: any) => {
     try {
       const { data } = await api.get('auth/refresh');
       setToken('Authentication', data);
-      const res = await api.post('users/me');
+      const res = await api.post('users/me', {
+         headers: {
+            Cookie: `Authentication=${data}`
+         }         
+      });
       setUser(res.data);
     } catch (e) {
       console.log(`no token found...`);
