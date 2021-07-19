@@ -16,12 +16,12 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
   }, []);
 
   return (
-    //   <AuthProvider>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Component {...pageProps} />
-    </ThemeProvider>
-    //   </AuthProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </AuthProvider>
   );
 };
 
