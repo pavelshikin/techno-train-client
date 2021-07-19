@@ -24,7 +24,7 @@ const Player = (props) => {
 
    const setAudio = () => {
       if (active) {
-         audio.src = process.env.apiUri + active.audio
+         audio.src = process.env.apiUrl + active.audio
          audio.volume = volume / 100
          audio.onloadedmetadata = () => {
             setDuration(Math.ceil(Number(audio.duration)))

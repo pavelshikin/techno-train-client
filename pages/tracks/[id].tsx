@@ -104,7 +104,7 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   const token = cookies.Authentication;
 
   if (token) {
-    const res = await api.get('/tracks/' + ctx.params.id, {
+    const res = await api.get('tracks/' + ctx.params.id, {
       headers: {
         Cookie: `Authentication=${token}`
       }

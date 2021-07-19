@@ -25,7 +25,7 @@ const Create = props => {
       formData.append('picture', picture);
       formData.append('audio', audio);
       api
-        .post('/tracks', formData)
+        .post('tracks', formData)
         .then(res => router.push('/tracks'))
         .catch(e => console.log(e));
     }
