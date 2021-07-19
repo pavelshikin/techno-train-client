@@ -1,0 +1,25 @@
+$primary: #59e55d;
+$secondary: #59ffcf;
+
+$red: #ff4e35;
+$redHover: #ff290e;
+
+$text: #fafafa;
+
+$bgMain: #313940;
+$bgBody: #67666e ;
+
+
+
+:export {
+  primary: $primary;
+  secondary: $secondary;
+
+  red:  $red;
+  redHover:  $redHover;
+
+  text: $text;
+
+  bgMain: $bgMain;
+  bgBody: $bgBody;
+}

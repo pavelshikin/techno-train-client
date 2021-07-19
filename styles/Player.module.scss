@@ -1,0 +1,57 @@
+@import 'smart-grid';
+@import "../theme/palette.module";
+
+.container {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  @include row-flex();
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+
+  .btn {
+    @include col();
+    @include size(2);
+  }
+
+  .title {
+    @include col();
+    @include size(4);
+    padding-left: 8px;
+    margin: 0 10px;
+
+    &Box{
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        padding-bottom: 3px;
+        font-weight: 700;
+      }
+
+      .artist {
+        font-size: 12px;
+        color: $secondary;
+      }
+    }
+  }
+
+  .bar {
+    @include col();
+    @include size(6);
+
+    &Box {
+      .progressBar{
+        display: flex;
+      }
+    }
+
+  }
+
+
+}
+
+
+
