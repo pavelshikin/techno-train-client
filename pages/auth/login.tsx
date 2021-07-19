@@ -58,7 +58,6 @@ const LoginPage = props => {
     <MainLayout title={'Вход'}>
       <div className="container">
         <div className={s.box}>
-          <h2>{process.env.customKey}</h2>
           <TextField
             {...email}
             label="Email"

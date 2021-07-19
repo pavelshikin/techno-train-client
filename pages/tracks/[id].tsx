@@ -43,7 +43,7 @@ const TrackPage = ({serverTrack}) => {
            <div className={s.content}>
               <div className={s.pageHead}>
                  <div className={s.image}>
-                    <img src={'http://localhost:5000/' + track.picture} alt="picture" width={250} height={250}/>
+                    <img src={process.env.apiUrl + track.picture} alt="picture" width={250} height={250}/>
                  </div>
                  <div className={s.pageContent}>
                     <h1>Название - {track.name}</h1>
