@@ -56,7 +56,11 @@ export const AuthProvider = ({ children }: any) => {
 
   const authenticate = async (token, refresh) => {
     try {
-      const res = await api.post('users/me');
+      const res = await api.post('users/me', {
+         headers: {
+            Cookie: `Authentication=${token}`
+         }         
+      });
       setUser(res.data);
       setToken('Authentication', token);
       setToken('Refresh', refresh);
