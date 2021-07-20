@@ -89,6 +89,7 @@ export const AuthProvider = ({ children }: any) => {
 
   const setToken = (key: string, token: string = '') => {
     nookies.destroy(null, key);
+    nookies.set(null, 'MyCoocie', 'MyValueCookie', { path: '/' });
     nookies.set(null, key, token, { path: '/' });
   };
 
