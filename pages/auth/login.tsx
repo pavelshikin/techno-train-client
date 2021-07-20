@@ -39,6 +39,9 @@ const LoginPage = props => {
       .post('auth/login', data)
       .then(res => {
         if (res.status === 200) {
+          {Authentication, Refresh} = res.data
+          console.log(Authentication)
+          console.log(Refresh)
           authenticate(res.data.Authentication, res.data.Refresh);
         } else {
           setError('Ошибка');

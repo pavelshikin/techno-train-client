@@ -43,9 +43,9 @@ export const AuthProvider = ({ children }: any) => {
       const { data } = await api.get('auth/refresh');
       setToken('Authentication', data);
       const res = await api.post('users/me', {
-         headers: {
-            Cookie: `Authentication=${data}`
-         }         
+        headers: {
+          Cookie: `Authentication=${data}`
+        }
       });
       setUser(res.data);
     } catch (e) {
@@ -57,10 +57,11 @@ export const AuthProvider = ({ children }: any) => {
   const authenticate = async (token, refresh) => {
     try {
       const res = await api.post('users/me', {
-         headers: {
-            Cookie: `Authentication=${token}`
-         }         
+        headers: {
+          Cookie: `Authentication=${token}`
+        }
       });
+      console.log(token);
       setUser(res.data);
       setToken('Authentication', token);
       setToken('Refresh', refresh);
