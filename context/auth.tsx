@@ -42,11 +42,7 @@ export const AuthProvider = ({ children }: any) => {
     try {
       const { data } = await api.get('auth/refresh');
       setToken('Authentication', data);
-      const res = await api.post('users/me', {
-        headers: {
-          Cookie: `Authentication=${data}`
-        }
-      });
+      const res = await api.post('users/me');
       setUser(res.data);
     } catch (e) {
       console.log(`no token found...`);
@@ -56,15 +52,10 @@ export const AuthProvider = ({ children }: any) => {
 
   const authenticate = async (token, refresh) => {
     try {
-      const res = await api.post('users/me', {
-        headers: {
-          Cookie: `Authentication=${token}; Refresh=${refresh}`
-        }
-      });
-      console.log(token);
+      const res = await api.post('users/me');
       setUser(res.data);
-      setToken('Authentication', token);
-      setToken('Refresh', refresh);
+//       setToken('Authentication', token);
+//       setToken('Refresh', refresh);
     } catch (e) {
       console.log(e);
       removeTokenAndUser();
@@ -89,7 +80,6 @@ export const AuthProvider = ({ children }: any) => {
 
   const setToken = (key: string, token: string = '') => {
     nookies.destroy(null, key);
-    nookies.set(null, 'MyCoocie', 'MyValueCookie', { path: '/' });
     nookies.set(null, key, token, { path: '/' });
   };
 
