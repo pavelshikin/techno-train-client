@@ -54,8 +54,8 @@ export const AuthProvider = ({ children }: any) => {
     try {
       const res = await api.post('users/me');
       setUser(res.data);
-//       setToken('Authentication', token);
-//       setToken('Refresh', refresh);
+         setToken('Authentication', token);
+         setToken('Refresh', refresh);
     } catch (e) {
       console.log(e);
       removeTokenAndUser();
